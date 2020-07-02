@@ -59,4 +59,4 @@ export default {
         numReviews: 8
       },
     ]
-  }
+}
