@@ -32,13 +32,13 @@ function App() {
       <button className="sidebar-close-button" onClick={closeMenu}>x</button>
       <ul>
         <li>
-          <a href="index.html">Books</a>
+          <a href="index.html" className="fa fa-book fa-lg"> Books </a>
         </li>
-
+        <hr></hr>
         <li>
-          <a href="index.html">Stationery</a>
+          <a href="index.html" className="fa fa-pencil fa-lg"> Stationery </a>
         </li>
-
+        <hr></hr>
       </ul>
     </aside>
     <main className="main">
