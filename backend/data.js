@@ -8,7 +8,8 @@ export default {
         price: 250,
         brand: ' Papermate',
         rating: 4.2,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 6,
       },
       {
         _id: '1',
@@ -18,7 +19,8 @@ export default {
         price: 160,
         brand: ' Classmate',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 7,
       },
       {
         _id: '2',
@@ -28,7 +30,8 @@ export default {
         price: 150,
         brand: ' Pearson',
         rating: 4.2,
-        numReviews: 5
+        numReviews: 5,
+        countInStock: 5,
       },
       {
         _id: '3',
@@ -38,7 +41,8 @@ export default {
         price: 70,
         brand: ' Trimax',
         rating: 4.5,
-        numReviews: 8
+        numReviews: 8,
+        countInStock: 10,
       }, {
         _id: '4',
         name: 'Ball Pen',
@@ -47,7 +51,8 @@ export default {
         price: 20,
         brand: ' Natraj',
         rating: 4.5,
-        numReviews: 8
+        numReviews: 8,
+        countInStock: 4,
       }, {
         _id: '5',
         name: 'Designer Pen',
@@ -56,7 +61,8 @@ export default {
         price: 20,
         brand: ' Papermate',
         rating: 4.5,
-        numReviews: 8
+        numReviews: 8,
+        countInStock: 8,
       },
     ]
 }
