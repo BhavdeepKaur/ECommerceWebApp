@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import CartScreen from './screens/CartScreen';
 
 const openMenu = () =>{
   document.querySelector(".sidebar").classList.add("open");
@@ -45,6 +46,7 @@ function App() {
       <div className="content">
 
         <Route path = "/product/:id" component = {ProductScreen} />
+        <Route path = "/cart/:id?" component = {CartScreen} /> {/*cart should work itself,id is optional*/}
         <Route path = "/" exact = {true} component = {HomeScreen} />
       </div>
 
