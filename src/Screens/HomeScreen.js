@@ -5,23 +5,58 @@ import { useSelector, useDispatch } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 
 function HomeScreen(props){
-    const productList = useSelector(state => state.productList);
+    const [searchKeyword, setSearchKeyword] = useState('');
+    const [sortOrder, setSortOrder] = useState('');
+    const category = props.match.params.id ? props.match.params.id : '';
+    const productList = useSelector((state) => state.productList);
     const { products, loading, error } = productList;
     const dispatch = useDispatch();
 
     useEffect( () => {
-      dispatch(listProducts());
+      dispatch(listProducts(category));
       return () => {
       //
       };
-    }, []);
+    }, [category]);
+
+    const submitHandler = (e) => {
+      e.preventDefault();
+      dispatch(listProducts(category, searchKeyword, sortOrder));
+    };
+    const sortHandler = (e) => {
+      setSortOrder(e.target.value);
+      dispatch(listProducts(category, searchKeyword, sortOrder));
+    };
+
     return(
-      loading ? (<div>Loading...</div>) : 
+      <>
+      {category && <h2 style={{ align: 'center' }}>{category}</h2>}
+
+      <ul className="filter">
+        <li>
+          <form onSubmit={submitHandler}>
+            <input
+              name="searchKeyword"
+              onChange={(e) => setSearchKeyword(e.target.value)}
+            />
+            <button className="button primary" type="submit"> Search </button>
+          </form>
+        </li>
+        <li>
+            Sort By{' '}
+          <select name="sortOrder" onChange={sortHandler}>
+            <option value="">Newest</option>
+            <option value="lowest">Lowest</option>
+            <option value="highest">Highest</option>
+          </select>
+        </li>
+      </ul>
+      {loading ? (<div>Loading...</div>) : 
       error ? (<div>{error}</div>) : 
       (
-      <ul className="products">
-        {
-          products.map( product => (
+      <ul className="products" >
+        
+          {products.map( (product) => (
             <li key={product._id}>
             
                 <div className="product">
@@ -43,7 +78,8 @@ function HomeScreen(props){
           
       </ul>
       
-     )
+     )}
+    </>
     )
 }
 

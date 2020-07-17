@@ -10,12 +10,6 @@ function ProductScreen(props){
     const dispatch = useDispatch();
 
     useEffect(() => {
-        /*if (productSaveSuccess) {
-          alert('Review submitted successfully.');
-          setRating(0);
-          setComment('');
-          dispatch({ type: PRODUCT_REVIEW_SAVE_RESET });
-        }*/
         dispatch(detailsProduct(props.match.params.id));
         return () => {
           //
