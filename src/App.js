@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
-import CartScreen from './screens/CartScreen';
-import ProductsScreen from './screens/ProductsScreen';
+import HomeScreen from './screens/HomeScreen.js';
+import ProductScreen from './screens/ProductScreen.js';
+import CartScreen from './screens/CartScreen.js';
+import ProductsScreen from './screens/ProductsScreen.js';
 
 const openMenu = () =>{
   document.querySelector(".sidebar").classList.add("open");
