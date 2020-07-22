@@ -237,9 +237,10 @@ function ProductsScreen(props) {
               <th>Name</th>
               <th>Price</th>
               <th>Category</th>
-              <th>Brand</th>
               <th>Rating</th>
               <th>Reviews</th>
+              <th>Brand</th>
+              <th>Image</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -253,6 +254,7 @@ function ProductsScreen(props) {
                 <td>{product.rating}</td>
                 <td>{product.numReviews}</td>
                 <td>{product.brand}</td>
+                <td>{product.image}</td>
                 <td>
                   <button className="button" onClick={() => openModal(product)}>
                     Edit

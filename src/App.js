@@ -25,7 +25,7 @@ function App() {
         <Link to = "/" style={{ color: '#ff086f' }}>YayShop</Link>
       </div>
       <div className="header-links">
-        <a href="/cart/:id?" className="fa fa-shopping-cart fa-lg"> Cart</a>
+        <a href="/cart" className="fa fa-shopping-cart fa-lg"> Cart</a>
         
         <a href="#" className="dropdown fa fa-user fa-lg"> Admin
                 <ul className="dropdown-content">

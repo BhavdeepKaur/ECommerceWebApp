@@ -26,6 +26,12 @@ app.use('/api/uploads', router1);
 
 app.use('/api/products', router);
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/../build'))); //using middleware
+app.get('*', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/../build/index.html`));
+});
+
 app.listen(config.PORT, () => {
   console.log('Server started at http://localhost:5000');
 });

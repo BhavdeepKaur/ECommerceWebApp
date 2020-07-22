@@ -67,7 +67,7 @@ function CartScreen(props) {
                                     </div>
                                 </div>
                                 <div className="cart-price">
-                                    ${item.price}
+                                    Rs. {item.price}
                                 </div>
                             </li>
                         )
