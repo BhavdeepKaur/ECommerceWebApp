@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch backend --exec babel-node server.js"
+    "start": "nodemon --watch backend --exec babel-node server.js",
+    "build": "cd.. && rm -rf dist && babel backend -d dist",
+    "heroku-postbuild": "npm run build && cd.. && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,11 @@
     "@babel/preset-env": "^7.10.4",
     "express": "^4.17.1",
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "14.2.0",
+    "yarn": "1.22.4",
+    "npm": "6.14.4"
   },
   "dependencies": {
     "aws-sdk": "^2.714.2",
